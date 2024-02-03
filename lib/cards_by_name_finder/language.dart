@@ -1,5 +1,4 @@
 enum Language {
-  Any,
   Russian,
   English,
   ChineseSimplified,
