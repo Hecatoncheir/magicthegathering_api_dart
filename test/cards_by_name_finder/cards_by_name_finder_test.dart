@@ -40,9 +40,8 @@ main() {
       late final http.Client httpClient;
       setUpAll(() {
         httpClient = MockClient((request) async {
-          print(request.url.toString());
           return request.url.toString() ==
-                  'https://api.magicthegathering.io/v1/cards?name=Edgar+Markov&language=english'
+                  'https://api.magicthegathering.io/v1/cards?name=Edgar+Markov&language=English'
               ? http.Response.bytes(encodedJson, 200)
               : http.Response('', 404);
         });

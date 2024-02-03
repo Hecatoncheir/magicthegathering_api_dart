@@ -15,21 +15,10 @@ class CardsByNameFinder {
 
   static Future<List<MagicTheGatheringCard>?> where({
     required String name,
-    Language? language,
   }) async {
     final lang = switch (language) {
       null => null,
-      Language.Russian => 'russian',
-      Language.English => 'english',
-      Language.ChineseSimplified => 'chinese simplified',
-      Language.ChineseTraditional => 'chinese traditional',
-      Language.French => 'french',
-      Language.Japanese => 'japanese',
-      Language.Korean => 'korean',
-      Language.Spanish => 'spanish',
-      Language.Italian => 'italian',
-      Language.German => 'german',
-      Language.Portuguese => 'portuguese',
+      _ => language.name,
     };
 
     Uri uri = Uri.parse("$url");
@@ -47,7 +36,7 @@ class CardsByNameFinder {
     final decodedJson = json.decode(encodedJson);
 
     final encodedCards = decodedJson['cards'];
-    if (encodedCards.isEmpty) return null;
+    if (encodedCards == null || encodedCards.isEmpty) return null;
 
     final cards = <MagicTheGatheringCard>[];
     for (final encodedCard in encodedCards) {

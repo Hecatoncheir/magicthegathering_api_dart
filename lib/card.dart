@@ -8,7 +8,7 @@ class Card {
     return CardByIdFinder.find(multiverseid);
   }
 
-  static Future<MagicTheGatheringCard?> where({
+  static Future<List<MagicTheGatheringCard>?> where({
     required String name,
     Language? language,
   }) {
