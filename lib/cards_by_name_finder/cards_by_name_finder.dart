@@ -15,6 +15,7 @@ class CardsByNameFinder {
 
   static Future<List<MagicTheGatheringCard>?> where({
     required String name,
+    Language? language,
   }) async {
     final lang = switch (language) {
       null => null,
