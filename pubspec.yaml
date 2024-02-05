@@ -1,6 +1,6 @@
 name: magicthegathering_api_dart
 description: Rest api wrapper for https://gatherer.wizards.com/Pages/Default.aspx.
-version: 0.1.2
+version: 1.0.1
 repository: https://github.com/Hecatoncheir/magicthegathering_api_dart
 
 environment:
