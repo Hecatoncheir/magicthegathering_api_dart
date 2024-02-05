@@ -49,7 +49,6 @@ void main() {
       late final http.Client httpClient;
       setUpAll(() {
         httpClient = MockClient((request) async {
-          print(request.toString());
           return request.url.toString() ==
                   'https://api.magicthegathering.io/v1/cards?name=Edgar+Markov'
               ? http.Response.bytes(encodedJson, 200)
